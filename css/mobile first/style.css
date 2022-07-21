@@ -10,18 +10,18 @@ body{
 
 #menu{
     display: flex; 
-    flex-direction: row; 
+    flex-direction: column; 
     padding: 0px;
     margin: 0px;
     justify-content: space-evenly; 
-    align-items: center; 
+    align-items: stretch; 
     height: 100vh;
     
    
 }
 
 #menu li {
-    width: 100px ;
+   
     height: 100px;
     background-color: bisque;
     margin: 10px;
@@ -29,4 +29,33 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+@media (min-width: 576px) { 
+    #menu{
+        background: black;
+    }
+}
+
+
+@media (min-width: 768px) { 
+    #menu{
+        flex-direction: row; 
+
+    }
+}
+
+
+@media (min-width: 992px) { 
+    #menu{}
+}
+
+@media (min-width: 1200px) { 
+    #menu{}
+}
+
+
+@media (min-width: 1400px) { 
+    #menu{}
 }
