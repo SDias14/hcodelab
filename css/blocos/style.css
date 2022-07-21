@@ -1,0 +1,46 @@
+#menu{
+    display: flex; /* or inline-flex */
+    flex-direction: row; /* column */
+    padding: 0px;
+    margin: 0px;
+    justify-content: space-evenly; /* center  este é o alinhamento vertical, qunado passamos para o row, o justify content passa a ter alinhamento horizontal . 
+
+    temos tambem como modificar o espacamento com o space between, ou seja, o espaço entre os itens é o mesmo.
+
+
+    around descola da margem esquerda e direita.
+
+    evenly distribui os itens de forma que o espaço entre eles seja igual.
+    */
+
+ 
+    
+    
+  
+    align-items: center; /* center  este é o alinhamento horizontal, quando passamos para row o alimenhamento se torna vertical*/
+    height: 100vh;
+    background-color: red;
+   
+}
+
+#menu li {
+    width: 100px ;
+    height: 100px;
+    background-color: bisque;
+    margin: 10px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+consigo trabalhar melhor com o inline-block
+
+o display flex faz com que o elemento seja flexivel, ou seja, ele pode ser redimensionado
+
+a mudança de direção do flex-direction faz com que o elemento seja flexivel em cada direção
+
+*/
+
+
