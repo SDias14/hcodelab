@@ -35,15 +35,18 @@ montando uma classe carro
 
 */
 
+/*
+
 
 
 class car {
-    constructor(cor, preco, fabricante, modelo, potencia) {
+    constructor(cor, preco, fabricante, modelo, potencia,direcao) {
         this.cor = cor;
         this.preco = preco;
         this.fabricante = fabricante;
         this.modelo = modelo;
         this.potencia = potencia;
+        this.direcao = direcao;
     }
     acelerar() {
         console.log('acelerando');
@@ -62,7 +65,12 @@ class car {
     }
 }
 
-let carro = new car('amarelo', 10000, 'Fiat', 'Palio', 1.0);
+
+
+
+
+
+let carro = new car('amarelo', 10000, 'Fiat', 'Palio', 1.0, 'esquerda');
 
 
 let carro2 = new car('azul', 10000, 'Fiat', 'Palio', 1.0);
@@ -73,28 +81,16 @@ let carro4 = new car('vermelho', 10000, 'Fiat', 'Palio', 1.0);
 
 console.log(carro);
 
-console.log(carro2);
 
-console.log(carro3);
-
-console.log(carro4);
-
-console.log (carro.cor);
-
-console.log (carro2.preco);
 
 //acelerar o carro em 45 km/s e frear em 10 km/s
 
 carro.acelerar();
 carro.frear();
 
-carro.preco = 20000; // alterando o preco do carro
+*/
 
-console.log(carro.preco);
 
-console.log(carro)
-
-console.log(carro2)
 
 // resumindo : foi criada uma classe carro, que tem os atributos e metodos que serao usados para criar um carro. essa classe é como se fosse um esboço do carro, que sera usado para criar um carro. Quando formos criar um carro ele será um novo objeto, que tera os atributos e metodos da classe carro. Eu posso criar diferentes carros com os mesmos atributos e metodos, ou seja, os diferentes carros usarao a mesma classe carro. Porem eu posso mudar alguns atributos para criar carros diferentes. Posso manipular os atributos e metodos de cada carro, como acelerar, frear, virar, abrir, fechar.
 /*
@@ -136,3 +132,104 @@ O banheiro protegido é um banheiro que pode ser acessado somente por aqueles qu
 
 No exemplo acima dos carros, eu consigo acessar todos os atributos e metodos fora da classe. Por que ? Porque quando nao declaro que tipo de encapsulamento quero usar, o js assume que e publico.
 */
+
+// propriedades privadas, publicas e protegidas
+
+/*
+
+class car {
+    cor = 'amarelo';
+    preco = 100000;
+    fabricante = 'Fiat';
+    potencia = 1.0;
+    modelo = 'Palio';
+    _direcao = 0;
+
+    acelerar() {
+        console.log('acelerando');
+    }
+    frear() {
+        console.log('freando');
+    }
+    virar(graus) {
+        this.direcao = this.direcao + graus;
+    }
+    abrir() {
+        console.log('abrindo');
+    }
+    fechar() {
+        console.log('fechando');
+    }
+    
+}
+
+
+
+
+
+
+
+let carro = new car();
+
+console.log(carro.virar(45));
+
+
+*/
+
+//montando uma classe com private
+
+class car {
+    constructor(cor, preco, fabricante, modelo, potencia, direcao) {
+        this.cor = cor;
+        this.preco = preco;
+        this.fabricante = fabricante;
+        this.modelo = modelo;
+        this.potencia = potencia;
+        //direção é um atributo privado 
+        this._direcao = direcao;
+
+       
+    }
+    acelerar() {
+        accelerate = accelerate + 1;
+    }
+    frear() {
+        console.log('freando');
+    }
+    virar(graus) {
+        this.direcao = this.direcao + graus;
+       
+        
+        return this.direcao;
+    }
+   
+    abrir() {
+        console.log('abrindo');
+    }
+    fechar() {
+        console.log('fechando');
+    }
+
+
+}
+ 
+
+let carro = new car('amarelo', 10000, 'Fiat', 'Palio', 1.0, 0);
+
+
+
+//acelerar o carro em 45 km/s e frear em 10 km/s
+
+let virar = carro.virar(45);
+
+console.log(virar);
+
+
+
+
+
+
+
+
+
+
