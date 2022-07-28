@@ -188,6 +188,7 @@ class car {
         //direção é um atributo privado 
         this._direcao = direcao;
 
+
        
     }
     acelerar() {
@@ -198,6 +199,8 @@ class car {
     }
     virar(graus) {
         this.direcao = this.direcao + graus;
+
+      
        
         
         return this.direcao;
@@ -217,12 +220,67 @@ class car {
 let carro = new car('amarelo', 10000, 'Fiat', 'Palio', 1.0, 0);
 
 
+// comandos this e self 
 
-//acelerar o carro em 45 km/s e frear em 10 km/s
+//quando criamos uma classe podemos criar uma herança. Quando criamos uma herança, podemos criar um novo objeto, que herdará os atributos e metodos da classe pai.
 
-let virar = carro.virar(45);
+class conversive extends car {
+    constructor(cor, preco, fabricante, modelo, potencia, direcao) {
+        super(cor, preco, fabricante, modelo, potencia, direcao);
+    }
 
-console.log(virar);
+    
+    
+ abrir_capota() {
+        console.log('abrindo capota');
+    }
+
+
+
+    acelerar() {
+        console.log('acelerando');
+    }
+    frear() {
+        console.log('freando');
+    }
+    virar(graus) {
+        this.direcao = this.direcao + graus;
+        return this.direcao;
+    }
+    abrir() {
+        console.log('abrindo');
+    }
+    fechar() {
+        console.log('fechando');
+    }
+}
+
+let car1 = new conversive('amarelo', 10000, 'Fiat', 'Palio', 1.0, 0);
+
+
+console.log(carro.cor)
+
+console.log(car1.cor)
+
+console.log(car1.abrir_capota())
+
+
+
+
+
+
+//extend : herdar de uma classe e criar um novo objeto.
+
+// super : chamar o metodo da classe pai.
+
+
+// interface : definição de uma serie de regras para uma classe.
+
+//interface no js : é um contrato que deve ser seguido por uma classe.
+
+// criando uma interface
+
+
 
 
 
