@@ -2,20 +2,33 @@ let ranking = [9,0,6,4,8,7,3,2,1,5];
 
 ranking.sort().reverse();
 
-console.log(ranking );
+
 
 // pop
 
 
 let removed = ranking.pop();
 
-console.log(removed);
 
 // push
+console.log(ranking);
+console.log(removed);
 
-ranking.push(removed);
+
+let method = ranking.push(900); // final do array.
 
 console.log(ranking);
+
+ranking.sort(function(a, b){
+    console.log(a, b);
+    return b - a;
+
+})
+
+console.log(method)
+
+
+
 
 
 
