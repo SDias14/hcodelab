@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulario de cadastro</h1>
+
+   <h4 id="boas-vindas"></h4>
+
+<form onsubmit="getData(event)"> <!--esse é um evento de escuta, pois quando clicarmos no botao ele vai submeter as informações e pegar os dados e lancar dentro da variavel -->
+
+<label for="name">Digite seu nome</label>
+
+<input type="text" name="name" id="name"  />
+
+<label for="e-mail">Digite seu e-mail<label>
+<input type="email" name="e-mail" id="e-mail"  />  
+
+<label for="pass">Digite sua senha</label>
+<input type="password" name="pass" id="pass"  />
+
+
+<input type="file" name="arquivo" id="arquivo" accept="image/*" onchange="lerArquivo()" />
+
+
+
+
+<div>
+    <button type="submit">ENVIAR</button>
+</div>
+
+
+</form>
+
+
+    <script src="index.js"></script>
+</body>
+</html>
