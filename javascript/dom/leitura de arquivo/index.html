@@ -21,13 +21,11 @@
 <label for="pass">Digite sua senha</label>
 <input type="password" name="pass" id="pass" value="12345" />
 
-<input type="file" 
-name="archive" 
-id="archive" 
-accept="image/*" 
-onchange="readFile()"> 
 
-<!--adicionar um arquivo-->
+<input type="file" name="arquivo" id="arquivo" accept="image/*" onchange="lerArquivo()" />
+
+
+
 
 <div>
     <button type="submit">ENVIAR</button>
