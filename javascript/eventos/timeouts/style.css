@@ -1,0 +1,16 @@
+#box{
+    background-color: yellow;
+    width: 100px;
+    height: 100px;
+}
+
+p {
+    color: red;
+    text-align: center;
+}
+
+#seconds {
+    color: red;
+    text-align: center;
+    font-size: large;
+}
