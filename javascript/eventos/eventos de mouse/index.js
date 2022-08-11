@@ -40,6 +40,34 @@ window.addEventListener('blur', function() {
 const botoes = document.querySelectorAll('button');
 
 [...botoes].forEach(botao => {
+
+botao.addEventListener ('mouseenter', function(event) {
+      console.log(event.type)
+
+}, false)
+
+botao.addEventListener ('mouseleave', function(event) {
+    console.log(event.type)
+
+}, false)
+
+botao.addEventListener ('mousemove', function(event) {
+    console.log(event.type)
+
+}, false)
+
+botao.addEventListener ('mousedown', function(event) {
+    console.log(event.type)
+
+}, false)
+
+botao.addEventListener ('mouseup', function(event) {
+    console.log(event.type)
+
+}, false)
+
+
+
 botao.addEventListener('contextmenu', (event) => {
 
 console.log(event.target.id)
