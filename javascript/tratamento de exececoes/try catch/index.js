@@ -1,21 +1,21 @@
-function exception (mensagem){
-  this.mensagem = mensagem
-  this.name = 'exception'
+function Excecao (mensagem){
+  this.message = mensagem
+  this.name = 'Excecao'
 }
 
-function numberException () {
-  this.message = 'is not a number'
-  this.name = 'numberException'
+function NotNumberException () {
+  this.message = 'É necessario informar um numero';
+  this.name = 'NotNumberException'
 }
 
 function divide(a, b) {
 
-if(typeof b !=='number'){
-  throw new numberException ().message;
+if(typeof a !== 'number'){
+  throw new NotNumberException();
 } else if (typeof b !=='number'){
-  numberException ().message;
+  throw new NotNumberException();
 } else  if (b === 0){
-  throw new exception ('Cannot divide by zero');
+  throw new Excecao ('Cannot divide by zero');
 }
 
   return a / b;
@@ -24,14 +24,51 @@ if(typeof b !=='number'){
 
 try {
   console.log(divide(10, 2));
-  console.log(divide(50, "feijo"));
-  console.log(divide(100, 0));
-  console.log(divide(5, 10));
 } catch (erro) {
-  if (erro instanceof numberException) {
+  if (erro instanceof NotNumberException) {
     console.log(erro.message);
-  } else if (erro instanceof exception) {
-    console.log(erro.message);
+  } else if (erro instanceof Excecao) {
+    console.error(erro.message);
   }
+} finally {
+  console.log('Finally');
+}
+
+try{
+  console.log(divide(50, "feijo"));
+}catch (erro) {
+  if (erro instanceof NotNumberException) {
+    console.log(erro.message);
+  } else if (erro instanceof Excecao) {
+    console.error(erro.message);
+  }
+} finally {
+  console.log('Finally');
+}
+
+
+try{
+  console.log(divide(100, 0));
+}catch (erro) {
+  if (erro instanceof NotNumberException) {
+    console.log(erro.message);
+  } else if (erro instanceof Excecao) {
+    console.error(erro.message);
+  }
+} finally {
+  console.log('Finally');
+}
+
+
+try{
+  console.log(divide(5, 10));
+}catch (erro) {
+  if (erro instanceof NotNumberException) {
+    console.log(erro.message);
+  } else if (erro instanceof Excecao) {
+    console.error(erro.message);
+  }
+} finally {
+  console.log('Finally');
 }
   
