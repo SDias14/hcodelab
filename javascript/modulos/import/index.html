@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<button type="button" id="soma">somar</button>
+<button type="button" id="multiplica">multiplicar</button>
+<button type="button" id="divide">dividir</button>
+
+
+
+
+
+
+
+
+
+
+
+<script type="module">
+
+
+
+const sum = document.querySelector('#soma')
+const mult = document.querySelector('#multiplica')
+const div= document.querySelector('#divide')
+
+
+sum.addEventListener('click', () =>{
+
+    import('./calculos.js').then(({somar}) => {
+        console.log(somar(10, 2));
+    })
+})
+
+mult.addEventListener('click', () =>{
+    import('./calculos.js').then(({multiplicar}) => {
+        console.log(multiplicar(10, 2));
+    })
+})
+
+div.addEventListener('click', () =>{
+    import('./calculos.js').then(({dividir}) => {
+        console.log(dividir(10, 2));
+    })
+})
+
+
+
+
+
+
+
+
+    
+</script>
+
+</body>
+</html>
